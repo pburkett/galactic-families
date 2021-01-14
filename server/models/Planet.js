@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const Planet = new Schema({
     name: { type: String, required: true },
-    parentId: { type: ObjectId, ref: "Star", required: true }
+    starsId: { type: ObjectId, ref: "Star", required: true }
 }, {
     timestamps: true,
     toJSON: { virtuals: true }

@@ -1,8 +1,8 @@
 import { dbContext } from "../db/DbContext";
 
 class BaseService {
-    async getAll(collection, query = {}) {
-        return await dbContext[collection].find(query);
+    async getAll(collection, query = {}, toPop) {
+        return await dbContext[collection].find(query).populate(toPop)
     }
 
     async create(collection, body) {
